@@ -1,0 +1,11 @@
+public class AOCSTRING {
+	public static ArrayList<String> StringToArray(String a,char d){
+		String b=a;
+		ArrayList<String> c = new ArrayList<>();
+		while (!b.isEmpty()) {
+			c.add(b.substring(0,b.indexOf(d)));
+			b=b.substring(b.indexOf('\n')+1);
+		}
+		return c;
+	}
+}
