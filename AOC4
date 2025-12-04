@@ -148,7 +148,7 @@ public class AOC4 {
 				+ "@@..@@..@@@@.@@..@..@@@.@@.@.@@@@@@@@@@@@@@.@@@@@@@.@@.@@@@@@.@@.@.@@.@@@..@@.@.@@@@@@@..@@...@@..@.@@.@@@@@@@@.@@.@@@@.@@@..@@@@@@....@@@.@\n"
 				+ "............................................................................................................................................\n";
 				
-			ArrayList<String> a=AOCSTRING.StringToArray(c,'\n');
+			ArrayList<String> a=StringToArray(c,'\n');
 			int n=0;
 			for (int i =1;i<a.size()-1;i++) {
 				for (int j=1;j<a.get(i).length()-1;j++) {
@@ -157,9 +157,10 @@ public class AOC4 {
 					amount=count(a.get(i-1).charAt(j))+count(a.get(i+1).charAt(j))
 						+count(a.get(i).charAt(j+1))+count(a.get(i-1).charAt(j+1))+count(a.get(i+1).charAt(j+1))
 					+count(a.get(i).charAt(j-1))+count(a.get(i-1).charAt(j-1))+count(a.get(i+1).charAt(j-1));
-					}
+					
 					if (amount<4)
 						n++;
+				}
 				}
 			}
 			System.out.println(n);
@@ -167,9 +168,7 @@ public class AOC4 {
 	public static int count(char a){
 		return a=='@'?1:0;
 	}
-}
 
-public class AOCSTRING {
 	public static ArrayList<String> StringToArray(String a,char d){
 		String b=a;
 		ArrayList<String> c = new ArrayList<>();
@@ -178,5 +177,6 @@ public class AOCSTRING {
 			b=b.substring(b.indexOf(d)+1);
 		}
 		return c;
-	}
+}
+
 }
