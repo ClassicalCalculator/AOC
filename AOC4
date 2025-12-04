@@ -168,3 +168,15 @@ public class AOC4 {
 		return a=='@'?1:0;
 	}
 }
+
+public class AOCSTRING {
+	public static ArrayList<String> StringToArray(String a,char d){
+		String b=a;
+		ArrayList<String> c = new ArrayList<>();
+		while (!b.isEmpty()) {
+			c.add("."+ b.substring(0,b.indexOf(d))+'.');
+			b=b.substring(b.indexOf(d)+1);
+		}
+		return c;
+	}
+}
